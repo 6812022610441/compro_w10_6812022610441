@@ -2,22 +2,22 @@
 #include <string.h>
 
 int main() {
-    char name1[100], name2[100]; // ประกาศตัวแปรสำหรับเก็บชื่อที่มีช่องว่าง
+    char name1[100], name2[100];
 
-    printf("Enter name of customer 1: "); // รับชื่อที่มีช่องว่าง
-    fgets(name1, sizeof(name1), stdin); // อ่านชื่อที่มีช่องว่าง
+    printf("Enter name of customer 1: ");
+    fgets(name1, sizeof(name1), stdin);
     name1[strcspn(name1, "\n")] = 0; // ลบ '\n' ออก
 
-    printf("Enter name of customer 2: "); // รับชื่อที่มีช่องว่าง
-    fgets(name2, sizeof(name2), stdin); // อ่านชื่อที่มีช่องว่าง
+    printf("Enter name of customer 2: ");
+    fgets(name2, sizeof(name2), stdin);
     name2[strcspn(name2, "\n")] = 0; // ลบ '\n' ออก
 
     if(strcmp(name1, name2) == 0) {
-        printf("Both of your names are the same, which is %s.\n", name1); // แสดงชื่อที่เหมือนกัน
-        printf("The length of the name is %ln characters.\n", strlen(name1)); // แสดงความยาวของชื่อ
+        printf("Both of your names are the same, which is %s.\n", name1);
+        printf("The length of the name is %lu characters.\n", strlen(name1));
     } else {
-        printf("Customer 1: %s (%ln characters)\n", name1, strlen(name1)); // แสดงชื่อและความยาวของชื่อลูกค้าคนที่ 1
-        printf("Customer 2: %s (%ln characters)\n", name2, strlen(name2)); // แสดงชื่อและความยาวของชื่อลูกค้าคนที่ 2
+        printf("Customer 1: %s (%lu characters)\n", name1, strlen(name1));
+        printf("Customer 2: %s (%lu characters)\n", name2, strlen(name2));
     }
 
     return 0;
